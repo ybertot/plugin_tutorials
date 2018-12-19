@@ -116,9 +116,8 @@ let repackage i h_hyps_id = Goal.enter begin fun gl ->
           mkApp (c_U (), [| ty2; mkVar h_hyps_id|]) |]) in
     Refine.refine ~typecheck:true begin fun evd ->
       let evd, new_goal = Evarutil.new_evar env evd
-          (mkProd (Names.Name.Anonymous,
-                     mkApp(c_H (), [| new_packed_type |]),
-                       Vars.lift 1 concl)) in
+          (mkArrowR (mkApp(c_H (), [| new_packed_type |]))
+             (Vars.lift 1 concl)) in
         evd, mkApp (new_goal,
                  [|mkApp(c_M (), [|new_packed_type; new_packed_value |]) |])
       end

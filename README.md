@@ -1,3 +1,10 @@
+This site is now frozen
+=======================
+
+This development has moved to the Coq repository in directory `doc/plugin_tutorials`.  For the master branch you can access at https://github.com/coq/coq/tree/master/doc/plugin_tutorial.
+
+
+
 How to write plugins in Coq
 ===========================
   # Working environment : merlin, tuareg (open question)
